@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
               to="/"
               className="hover:text-emerald-600 transition-colors text-xl font-bold"
             >
-              My Portfolio
+              My Portfolio.<span class="blinking-caret"> I</span>
             </Link>
           </div>
 

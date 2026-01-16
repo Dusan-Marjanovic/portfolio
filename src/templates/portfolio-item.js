@@ -8,15 +8,28 @@ const PortfolioItemPage = ({ data }) => {
   const item = data.contentfulPortfolioItem;
   return (
     <Layout>
-      <div className="p-10">
-        <h1 className="text-4xl font-bold">{item.title}</h1>
-        <p>{item.slug}</p>
-        <GatsbyImage
-          image={item.image.gatsbyImageData}
-          alt={item.title}
-          layout={item.image.layout}
-        />
-        {item.description && <div>{renderRichText(item.description)}</div>}
+      <div className="flex justify-center py-16">
+        <div className="w-[95%] max-w-4xl bg-white rounded-3xl p-12 sm:p-16">
+          <h1 className="text-5xl font-bold text-emerald-600 mb-8 text-center">
+            {item.title}
+          </h1>
+
+          {item.image && (
+            <div className="mb-12">
+              <GatsbyImage
+                image={item.image.gatsbyImageData}
+                alt={item.title}
+                className="w-full rounded-2xl"
+              />
+            </div>
+          )}
+
+          {item.description && (
+            <div className="prose prose-emerald max-w-none text-gray-700 mx-auto">
+              {renderRichText(item.description)}
+            </div>
+          )}
+        </div>
       </div>
     </Layout>
   );
@@ -29,9 +42,6 @@ export const query = graphql`
       slug
       description {
         raw
-      }
-      image {
-        gatsbyImageData(layout: CONSTRAINED, width: 1000, placeholder: BLURRED)
       }
     }
   }

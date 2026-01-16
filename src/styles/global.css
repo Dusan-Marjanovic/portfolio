@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.blinking-caret {
+  animation: blink 1s steps(1) infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
