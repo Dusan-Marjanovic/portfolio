@@ -9,12 +9,12 @@ const PortfolioItemPage = ({ data }) => {
   return (
     <Layout>
       <div
-        className="flex flex-wrap justify-center py-16
-      min-w-screen min-h-screen background-primary"
+        className="flex flex-wrap justify-center
+      min-w-screen min-h-screen bg-white pt-8"
       >
-        <div className="w-[95%] max-w-4xl  rounded-3xl p-12 sm:p-16">
+        <div className="w-[95%] max-w-4xl p-8 rounded-3xl">
           {item.image && (
-            <div className="mb-12 flex  justify-center">
+            <div className="mb-12 flex justify-center">
               <GatsbyImage
                 image={item.image.gatsbyImageData}
                 alt={item.title}
@@ -23,7 +23,10 @@ const PortfolioItemPage = ({ data }) => {
             </div>
           )}
 
-          <h1 className="text-5xl font-bold accent-primary mb-8 text-center">
+          <h1
+            className="text-5xl font-bold accent-primary mb-8 text-center"
+            style={{ fontSize: "clamp(1.5rem, 5vw, 3rem)" }}
+          >
             {item.title}
           </h1>
 
@@ -34,7 +37,7 @@ const PortfolioItemPage = ({ data }) => {
           )}
         </div>
         {item.imageGallery && (
-          <div className="mt-12 flex flex-wrap gap-6 justify-center">
+          <div className="mt-12 flex p-4 flex-wrap gap-6 justify-center">
             {item.imageGallery.map((image, index) => (
               <GatsbyImage
                 key={index}
@@ -59,11 +62,11 @@ export const query = graphql`
         raw
       }
       image {
-        gatsbyImageData(layout: CONSTRAINED, width: 400, placeholder: BLURRED)
+        gatsbyImageData(layout: CONSTRAINED, width: 350, placeholder: BLURRED)
         title
       }
       imageGallery {
-        gatsbyImageData(layout: CONSTRAINED, width: 300, placeholder: BLURRED)
+        gatsbyImageData(layout: CONSTRAINED, width: 450, placeholder: BLURRED)
         title
       }
     }

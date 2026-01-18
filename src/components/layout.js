@@ -2,6 +2,9 @@ import React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import styles from "../styles/layout.module.css";
 
+const Header = ({ menuItems }) => {
+  const [open, setOpen] = React.useState(false);
+};
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -19,19 +22,19 @@ const Layout = ({ children }) => {
   const menuItems = data.allContentfulMenuItem.nodes;
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="background-primary fixed top-0 left-0 w-full z-50">
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
-          <div className="flex items-center space-x-4">
+      <header className="header sticky top-0 left-0 w-full z-50 background-primary">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-4 px-6">
+          <div className="w-full flex justify-center md:justify-start mb-4 md:mb-0">
             <Link
               to="/"
               className="text-primary transition-colors text-xl font-bold logo link"
             >
-              My Portfolio.<span class="blinking-caret"> I</span>
+              My Portfolio.<span className="blinking-caret"> I</span>
             </Link>
           </div>
 
-          <nav>
-            <ol className="flex space-x-6 text-primary font-medium">
+          <nav className="w-full">
+            <ol className="flex justify-center md:justify-end space-x-6 text-primary font-medium flex-wrap">
               {menuItems.map((item) => (
                 <li key={item.order}>
                   <Link
@@ -47,7 +50,7 @@ const Layout = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-1 flex pt-10">
+      <main className="flex-1 flex">
         <div className="">{children}</div>
       </main>
 

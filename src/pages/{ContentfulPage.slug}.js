@@ -31,7 +31,7 @@ const Page = ({ data }) => {
       )}
 
       <div className="absolute inset-0 min-h-screen flex flex-col items-center justify-start pt-30">
-        <div className="relative z-10 p-10 max-w-4xl  ">
+        <div className="relative z-10 p-10 max-w-4xl ">
           <h1 className="text-left text-5xl font-bold accent-primary pb-5">
             {page.title}
           </h1>

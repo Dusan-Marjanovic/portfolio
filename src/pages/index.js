@@ -3,14 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 
 const IndexPage = () => {
-  return (
-    <Layout>
-      <div className="p-10">
-        <h1 className="text-4xl font-bold text-red-500">Home Page</h1>
-        <Link to="/about">About</Link>
-      </div>
-    </Layout>
-  );
+  return <Layout></Layout>;
 };
 
 export default IndexPage;

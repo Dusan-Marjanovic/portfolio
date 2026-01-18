@@ -28,7 +28,7 @@ const PortfolioPage = () => {
   const items = data.allContentfulPortfolioItem.nodes;
   return (
     <Layout>
-      <div className="p-10 min-w-screen flex flex-col items-center background-primary">
+      <div className="p-10 min-w-screen flex flex-col items-center card-hover">
         <h1 className="text-4xl font-bold accent-primary text-left mb-12">
           Portfolio Page
         </h1>
@@ -40,7 +40,7 @@ const PortfolioPage = () => {
               className="relative page-content rounded-3xl p-8 mb-8 flex flex-col md:flex-row gap-10 items-center group"
             >
               {item.image && (
-                <div className="w-full md:w-1/3 shrink-0 overflow-hidden rounded-2xl">
+                <div className="w-full md:w-1/3 shrink-0 overflow-hidden bg-white p-8 rounded-full">
                   <GatsbyImage
                     image={item.image?.gatsbyImageData}
                     alt={item.title}

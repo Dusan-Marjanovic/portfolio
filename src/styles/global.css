@@ -2,6 +2,7 @@
 
 html {
   font-family: Roboto, system-ui, sans-serif;
+  background-color: var(--background-color-primary);
 }
 
 h1,
@@ -16,10 +17,10 @@ h6,
 }
 
 :root {
-  --accent-primary: #ca6fa1;
-  --text-color: #eaeaec;
-  --background-color-primary: #221f22;
-  --background-color-primary-op: #221f22cc;
+  --accent-primary: #cd5c5c;
+  --text-color: #29292b;
+  --background-color-primary: #f0edf0;
+  --background-color-primary-op: #afa9af70;
   --background-color-secondary: #5e585e;
 }
 
@@ -51,7 +52,7 @@ a:hover,
 }
 
 .image:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .hero-image::after {
@@ -60,16 +61,19 @@ a:hover,
   inset: 0;
   background: linear-gradient(
     to bottom,
-    var(--background-color-primary) 35%,
-    var(--background-color-primary-op) 50%,
-    #f5f5f400
+    var(--background-color-primary) 20%,
+    #00000000
   );
   z-index: 1;
   pointer-events: none;
 }
 
 .page-content {
-  background-color: var(--background-color-secondary);
+  border: solid 2px #ffffff00;
+  transition: 0.5s;
+}
+.page-content:hover {
+  border: solid 2px var(--accent-primary);
 }
 
 @keyframes blink {
